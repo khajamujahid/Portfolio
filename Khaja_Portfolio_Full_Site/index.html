@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khaja Mujahiddin Mohammed — Data & AI Portfolio</title>
+  <meta name="description" content="Data Scientist & ML Engineer portfolio.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js" defer></script>
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand" aria-label="Brand">
+        <img src="assets/favicon.png" alt="Logo">
+        <div class="brand-name" role="button" tabindex="0" aria-label="Hidden interaction">Khaja Mujahiddin Mohammed</div>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a class="magnetic" href="#home">Home</a></li>
+          <li><a class="magnetic" href="#about">About</a></li>
+          <li><a class="magnetic" href="#projects">Projects</a></li>
+          <li><a class="magnetic" href="#experience">Experience</a></li>
+          <li><a class="magnetic" href="#skills">Skills</a></li>
+          <li><a class="magnetic" href="#education">Education</a></li>
+          <li><a class="magnetic" href="#certs">Certifications</a></li>
+          <li><a class="magnetic" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="theme-toggle magnetic" aria-pressed="false">☀️ Light</button>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero" aria-labelledby="intro-title">
+      <div>
+        <h1 id="intro-title">Data Scientist • ML Engineer • Cloud Data Engineer</h1>
+        <p>Data Scientist & Cloud Engineer with 3+ years designing end‑to‑end data workflows, ML models, and cloud analytics. Specialized in NLP, CV, MLOps, and real‑time data engineering on AWS.</p>
+        <div class="cta">
+          <a class="btn accent magnetic" href="mailto:khajamujahiddin@gmail.com">Contact Me</a>
+          <a class="btn magnetic" href="https://github.com/khajamujahiddin" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn magnetic" href="https://www.linkedin.com/in/khajamujahiddin" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn magnetic" id="downloadPDF">Download PDF Resume</a>
+        </div>
+      </div>
+      <div class="panel" data-aos="zoom-in">
+        <img src="assets/headshot.jpg" alt="Portrait of Khaja Mujahiddin Mohammed" width="512" height="512" loading="lazy">
+        <div class="badges" style="margin-top:10px">
+          <span class="badge">United States</span>
+          <span class="badge">Python</span>
+          <span class="badge">AWS</span>
+          <span class="badge">Power BI</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="panel" data-aos="fade-up">
+        <p>I turn messy data into reliable, timely insights. From AWS ETL pipelines processing 50k+/day to deploying NLP/CV with Docker/Kubernetes & MLflow — I build production systems that move the needle.</p>
+        <div class="grid grid-3" style="margin-top:10px">
+          <div class="card" data-aos="fade-up"><strong data-counter="3">0</strong>+ years experience</div>
+          <div class="card" data-aos="fade-up"><strong data-counter="20">0</strong>+ dashboards built</div>
+          <div class="card" data-aos="fade-up"><strong data-counter="15">0</strong>+ data pipelines</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="grid grid-3">
+        <article class="card tilt" data-aos="fade-up">
+          <img src="assets/project1.png" alt="Fake News Detection preview" loading="lazy">
+          <h3>Fake News Detection (Multimodal)</h3>
+          <p>85% accuracy combining NLP text & metadata. Automated retraining with Airflow. Deployed on Hugging Face Spaces.</p>
+          <div class="badges"><span class="badge">Python</span><span class="badge">TensorFlow</span><span class="badge">Transformers</span><span class="badge">Airflow</span></div>
+        </article>
+        <article class="card tilt" data-aos="fade-up">
+          <img src="assets/project2.png" alt="Segmentation preview" loading="lazy">
+          <h3>Self‑Driving: Pedestrian & Cyclist Segmentation</h3>
+          <p>U‑Net semantic segmentation for urban scenes; improved precision/recall; real‑time evaluation pipeline.</p>
+          <div class="badges"><span class="badge">TensorFlow</span><span class="badge">OpenCV</span><span class="badge">U‑Net</span></div>
+        </article>
+        <article class="card tilt" data-aos="fade-up">
+          <img src="assets/project3.png" alt="Customer Segmentation preview" loading="lazy">
+          <h3>Customer Segmentation (K‑Means + PCA)</h3>
+          <p>Actionable clustering with Power BI visuals; +10% marketing targeting efficiency.</p>
+          <div class="badges"><span class="badge">Python</span><span class="badge">scikit‑learn</span><span class="badge">PCA</span><span class="badge">Power BI</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section" aria-labelledby="exp-title">
+      <h2 id="exp-title">Experience</h2>
+      <div class="timeline">
+        <div class="item" data-aos="fade-up">
+          <h3>AWS Cloud Practitioner Intern — EduBridge Learning Pvt. Ltd.</h3>
+          <div class="muted">Hyderabad, India (Remote) • Feb 2023 – May 2023</div>
+          <ul>
+            <li>Improved data processing efficiency by 25% via Python-based ETL pipelines.</li>
+            <li>Optimized AWS EC2/S3/RDS/Redshift workflows, reducing system load by 20%.</li>
+            <li>Delivered cloud-native architectures with Airflow/dbt for scheduled workflows.</li>
+          </ul>
+        </div>
+        <div class="item" data-aos="fade-up">
+          <h3>Power BI Developer — SRIK Consulting Services Pvt. Ltd.</h3>
+          <div class="muted">Hyderabad, India • Sep 2020 – Feb 2023</div>
+          <ul>
+            <li>Built 20+ interactive dashboards; improved operational visibility by 30%.</li>
+            <li>Automated pipelines with SQL & Power Query; reduced manual errors.</li>
+            <li>Implemented advanced DAX metrics and time-series analysis.</li>
+          </ul>
+        </div>
+        <div class="item" data-aos="fade-up">
+          <h3>Data Analytics Intern — ExcelR Solutions</h3>
+          <div class="muted">Remote • Oct 2022 – Jan 2023</div>
+          <ul>
+            <li>Designed dashboards (Power BI/Tableau) for KPI tracking.</li>
+            <li>Improved data extraction accuracy by 30% via optimized SQL.</li>
+            <li>Reduced reporting time by 25% with automated analysis.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="grid grid-2">
+        <div class="card" data-aos="fade-right"><canvas id="skillRadar" width="400" height="320" aria-label="Skill radar"></canvas></div>
+        <div class="card" data-aos="fade-left"><canvas id="skillBars" width="400" height="320" aria-label="Skill bars"></canvas></div>
+      </div>
+    </section>
+
+    <section id="education" class="section" aria-labelledby="edu-title">
+      <h2 id="edu-title">Education</h2>
+      <div class="edu-card" data-aos="fade-up">
+        <strong>Master’s in Data Science</strong>
+        <div>University of New Haven, CT, USA</div>
+        <div class="muted">Aug 2023 – May 2025</div>
+        <div>Advanced ML, DL, NLP, Cloud MLOps, Big Data. Spark ETL on EMR; SageMaker Pipelines retraining.</div>
+      </div>
+    </section>
+
+    <section id="certs" class="section" aria-labelledby="certs-title">
+      <h2 id="certs-title">Certifications & Achievements</h2>
+      <div class="panel">
+        <div class="badges">
+          <span class="badge">AWS Cloud Practitioner — EduBridge</span>
+          <span class="badge">Google Data Analytics — Coursera</span>
+          <span class="badge">HackerRank SQL — 5 Star</span>
+          <span class="badge">MySQL 5.6 Developer — Udemy</span>
+          <span class="badge">PGDCA</span>
+          <span class="badge">Forage — Data Analytics & Visualization</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <div class="grid grid-2">
+        <div class="panel" data-aos="fade-right">
+          <form method="POST" action="https://formspree.io/f/yourid" data-netlify="true" name="contact" netlify>
+            <input type="hidden" name="form-name" value="contact">
+            <label>Full Name
+              <input name="name" required style="width:100%;margin-top:6px">
+            </label><br>
+            <label>Email
+              <input type="email" name="email" required style="width:100%;margin-top:6px">
+            </label><br>
+            <label>Message
+              <textarea name="message" rows="5" required style="width:100%;margin-top:6px"></textarea>
+            </label><br>
+            <button class="btn accent magnetic" type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="panel" data-aos="fade-left">
+          <p><strong>Email:</strong> <a href="mailto:khajamujahiddin@gmail.com">khajamujahiddin@gmail.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/khajamujahiddin" target="_blank" rel="noreferrer">linkedin.com/in/khajamujahiddin</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/khajamujahiddin" target="_blank" rel="noreferrer">github.com/khajamujahiddin</a></p>
+          <p><strong>Phone:</strong> 347-736-5812</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside id="secretLab" class="secret" role="dialog" aria-modal="true" aria-labelledby="secret-title">
+    <h3 id="secret-title">🔬 Secret Lab — Unlocked!</h3>
+    <p>You found the easter egg. Enjoy bonus visuals and goodies.</p>
+    <button class="btn" onclick="document.getElementById('secretLab').classList.remove('open')">Close</button>
+  </aside>
+
+  <section id="printable" class="hidden" aria-hidden="true">
+    <h1>Khaja Mujahiddin Mohammed</h1>
+    <p>Data Scientist • ML Engineer • Cloud Data Engineer</p>
+    <p>Email: khajamujahiddin@gmail.com | LinkedIn: linkedin.com/in/khajamujahiddin | GitHub: github.com/khajamujahiddin | Phone: 347-736-5812</p>
+    <h2>Summary</h2>
+    <p>Data Scientist & Cloud Engineer with 3+ years designing end‑to‑end data workflows, ML models, and cloud analytics.</p>
+    <h2>Experience</h2>
+    <h3>AWS Cloud Practitioner Intern — EduBridge (Feb 2023 – May 2023)</h3>
+    <ul><li>Improved ETL efficiency by 25%.</li><li>Optimized AWS workflows (EC2/S3/RDS/Redshift).</li></ul>
+    <h3>Power BI Developer — SRIK Consulting (Sep 2020 – Feb 2023)</h3>
+    <ul><li>20+ dashboards, +30% visibility.</li><li>Automated SQL & Power Query pipelines.</li></ul>
+    <h3>Data Analytics Intern — ExcelR (Oct 2022 – Jan 2023)</h3>
+    <ul><li>Dashboards for KPIs; improved SQL accuracy.</li></ul>
+    <h2>Projects</h2>
+    <p>Fake News (Multimodal), Segmentation (U‑Net), Customer Segmentation (K‑Means), Retail Sales BI, SVHN CNN.</p>
+    <h2>Education</h2>
+    <p><strong>Master’s in Data Science</strong> — University of New Haven (Aug 2023 – May 2025)</p>
+    <h2>Certifications</h2>
+    <ul><li>AWS Cloud Practitioner</li><li>Google Data Analytics</li><li>HackerRank SQL 5‑Star</li></ul>
+  </section>
+
+  <footer class="container">
+    <div>© 2025 Khaja Mujahiddin Mohammed — Built with HTML, CSS, JS, GSAP, AOS, Chart.js.</div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
