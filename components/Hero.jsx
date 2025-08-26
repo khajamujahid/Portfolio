@@ -11,11 +11,11 @@ export default function Hero() {
       {/* animated network background */}
       <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-      {/* full-width cover photo behind the avatar */}
+      {/* INSERTED: full-width cover photo behind the avatar */}
       <div className="hero-cover" aria-hidden="true">
         <Image
-          src="/hero-bg.jpg"     // <-- your banner in /public
-          alt=""                 // decorative
+          src="/hero-bg.jpg"      // file lives in /public/hero-bg.jpg
+          alt=""                  // decorative
           fill
           priority
           sizes="100vw"
@@ -23,6 +23,7 @@ export default function Hero() {
         />
         <div className="hero-cover-overlay" />
       </div>
+      {/* END INSERT */}
 
       <motion.div
         className="hero-content"
@@ -32,7 +33,7 @@ export default function Hero() {
       >
         {/* round avatar */}
         <Image
-          src="/profile.jpg"     // <-- your avatar in /public
+          src="/profile.jpg"      // file lives in /public/profile.jpg
           width={140}
           height={140}
           alt="Khaja Mujahiddin Mohammed"
