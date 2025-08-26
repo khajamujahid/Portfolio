@@ -75,24 +75,25 @@ p{ margin: 0 0 12px; color: var(--text); } .muted{ color: var(--muted); }
   .nav-toggle{ display:block; }
   .nav ul[aria-expanded="true"]{ display:flex; }
 }
-/* === Contact section polish (lightened cards + readable text/links) === */
+
+/* === Contact section polish (lighter cards + readable text/links) === */
 .section.contact { position: relative; }
 
-/* Lighten the two contact cards in dark mode */
+/* Lighter cards in dark mode */
 .section.contact .card,
 .section.contact .contact-card,
 .section.contact .form-card {
-  background: rgba(255, 255, 255, 0.06);      /* glassy, lighter than rest */
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.10);   /* was 0.06 → lighter */
+  border: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(6px);
 }
 
-/* Equivalent in light mode: a subtle gray tint */
+/* Slight tint in light mode */
 .light .section.contact .card,
 .light .section.contact .contact-card,
 .light .section.contact .form-card {
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.05);         /* was 0.03 → a touch stronger */
+  border: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 /* Headings & body text contrast */
@@ -101,52 +102,65 @@ p{ margin: 0 0 12px; color: var(--text); } .muted{ color: var(--muted); }
 .section.contact .card p,
 .section.contact .card li,
 .section.contact .card span {
-  color: #e7eefb;               /* high-contrast on dark */
+  color: #e7eefb;
 }
 .light .section.contact h2,
 .light .section.contact label,
 .light .section.contact .card p,
 .light .section.contact .card li,
 .light .section.contact .card span {
-  color: #0b1220;               /* readable on light */
+  color: #0b1220;
 }
 
-/* Link color tuned to the site’s blue */
+/* Links tuned to site blue */
 .section.contact a {
   color: #60a5fa;
   text-decoration: none;
 }
 .section.contact a:hover {
-  color: #93c5fd;
+  color: #a7c7ff;
   text-decoration: underline;
 }
 
 /* Inputs/textarea readable in both themes */
 .section.contact input,
 .section.contact textarea {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);   /* was 0.06 */
   color: #e7eefb;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);  /* was 0.14 */
   outline: none;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: background .25s, border-color .25s, box-shadow .25s;
 }
 .section.contact input::placeholder,
 .section.contact textarea::placeholder {
-  color: rgba(231, 238, 251, 0.6);
+  color: rgba(231, 238, 251, 0.7);
 }
 .light .section.contact input,
 .light .section.contact textarea {
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.05);        /* was 0.03 */
   color: #0b1220;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.14);
 }
 .light .section.contact input::placeholder,
 .light .section.contact textarea::placeholder {
   color: rgba(11, 18, 32, 0.55);
 }
 
-/* Optional: make the “Send via Email” button stand out slightly more */
-.section.contact .btn.primary,
-.section.contact button[type="submit"] {
-  box-shadow: 0 6px 18px rgba(96, 165, 250, 0.25);
+/* Form layout + spacing */
+.section.contact .form-row{ display:flex; gap:12px; align-items:flex-start; margin-bottom:12px; }
+.section.contact label{ min-width:92px; font-weight:600; margin-top:8px; }
+.section.contact textarea{ min-height:120px; resize:vertical; }
+
+@media (max-width:640px){
+  .section.contact .form-row{ flex-direction:column; }
+  .section.contact label{ margin:0 0 6px 0; }
 }
 
+/* Make the primary action pop a bit more */
+.section.contact .btn.primary,
+.section.contact button[type="submit"] {
+  box-shadow: 0 6px 18px rgba(96, 165, 250, 0.28);
+}
