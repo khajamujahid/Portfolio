@@ -10,7 +10,7 @@ export default function Contact(){
     window.location.href = `mailto:${contacts.email}?subject=${subject}&body=${body}`;
   };
   return (
-    <section id="contact" className="section" aria-labelledby="contact-title">
+    <section id="contact" className="section contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
       <div className="contact-grid">
         <div className="contact-card">
