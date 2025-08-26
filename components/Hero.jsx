@@ -8,36 +8,24 @@ import TechMarquee from '@/components/TechMarquee';
 export default function Hero() {
   return (
     <section id="home" className="section hero" aria-labelledby="hero-title">
-      {/* Cinematic banner with rounded corners */}
-      <div className="hero-banner" aria-hidden="true">
-        {/* Use /public/hero-bg.jpg (or .webp). Export ≥ 2400px wide for crispness */}
-        <Image
-          src="/hero-bg.jpg"
-          alt=""
-          fill
-          priority
-          quality={100}
-          sizes="100vw"
-          className="hero-banner-img"
-        />
-        <div className="hero-banner-overlay" />
-      </div>
+      {/* keep the animated network canvas */}
+      <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
       <motion.div
         className="hero-content"
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.65 }}
+        transition={{ duration: 0.8 }}
       >
-        {/* Avatar — points to /public/profile.jpg */}
+        {/* Bigger avatar */}
         <Image
-          src="/profile.jpg"
-          width={140}
-          height={140}
+          src="/profile.jpg"          // put your photo in /public/profile.jpg
+          width={200}
+          height={200}
           alt="Khaja Mujahiddin Mohammed"
           className="hero-avatar"
           priority
-          sizes="(max-width: 768px) 128px, 140px"
+          sizes="(max-width: 640px) 150px, 200px"
         />
 
         <h1 id="hero-title">
@@ -50,10 +38,10 @@ export default function Hero() {
         </p>
 
         <div className="domain-badges" role="list">
-          <span className="badge" role="listitem" aria-label="NLP">NLP</span>
-          <span className="badge" role="listitem" aria-label="Deep Learning">Deep Learning</span>
-          <span className="badge" role="listitem" aria-label="Machine Learning">ML</span>
-          <span className="badge" role="listitem" aria-label="Data Visualization">Data Viz</span>
+          <span className="badge" role="listitem">NLP</span>
+          <span className="badge" role="listitem">Deep Learning</span>
+          <span className="badge" role="listitem">ML</span>
+          <span className="badge" role="listitem">Data Viz</span>
         </div>
 
         <div className="hero-cta">
