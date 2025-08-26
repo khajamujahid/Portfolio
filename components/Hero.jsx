@@ -8,7 +8,7 @@ import TechMarquee from '@/components/TechMarquee';
 export default function Hero() {
   return (
     <section id="home" className="section hero" aria-labelledby="hero-title">
-      {/* keep the animated network canvas */}
+      {/* animated network canvas stays */}
       <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
       <motion.div
@@ -19,7 +19,7 @@ export default function Hero() {
       >
         {/* Bigger avatar */}
         <Image
-          src="/profile.jpg"          // put your photo in /public/profile.jpg
+          src="/profile.jpg"                 // put your photo at /public/profile.jpg
           width={200}
           height={200}
           alt="Khaja Mujahiddin Mohammed"
