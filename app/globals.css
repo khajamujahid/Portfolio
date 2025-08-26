@@ -75,3 +75,78 @@ p{ margin: 0 0 12px; color: var(--text); } .muted{ color: var(--muted); }
   .nav-toggle{ display:block; }
   .nav ul[aria-expanded="true"]{ display:flex; }
 }
+/* === Contact section polish (lightened cards + readable text/links) === */
+.section.contact { position: relative; }
+
+/* Lighten the two contact cards in dark mode */
+.section.contact .card,
+.section.contact .contact-card,
+.section.contact .form-card {
+  background: rgba(255, 255, 255, 0.06);      /* glassy, lighter than rest */
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(6px);
+}
+
+/* Equivalent in light mode: a subtle gray tint */
+.light .section.contact .card,
+.light .section.contact .contact-card,
+.light .section.contact .form-card {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Headings & body text contrast */
+.section.contact h2,
+.section.contact label,
+.section.contact .card p,
+.section.contact .card li,
+.section.contact .card span {
+  color: #e7eefb;               /* high-contrast on dark */
+}
+.light .section.contact h2,
+.light .section.contact label,
+.light .section.contact .card p,
+.light .section.contact .card li,
+.light .section.contact .card span {
+  color: #0b1220;               /* readable on light */
+}
+
+/* Link color tuned to the site’s blue */
+.section.contact a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+.section.contact a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+/* Inputs/textarea readable in both themes */
+.section.contact input,
+.section.contact textarea {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e7eefb;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  outline: none;
+}
+.section.contact input::placeholder,
+.section.contact textarea::placeholder {
+  color: rgba(231, 238, 251, 0.6);
+}
+.light .section.contact input,
+.light .section.contact textarea {
+  background: rgba(0, 0, 0, 0.03);
+  color: #0b1220;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.light .section.contact input::placeholder,
+.light .section.contact textarea::placeholder {
+  color: rgba(11, 18, 32, 0.55);
+}
+
+/* Optional: make the “Send via Email” button stand out slightly more */
+.section.contact .btn.primary,
+.section.contact button[type="submit"] {
+  box-shadow: 0 6px 18px rgba(96, 165, 250, 0.25);
+}
+
