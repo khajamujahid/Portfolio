@@ -8,32 +8,30 @@ import TechMarquee from '@/components/TechMarquee';
 export default function Hero() {
   return (
     <section id="home" className="section hero" aria-labelledby="hero-title">
-      {/* animated network background */}
-      <canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-      {/* INSERTED: full-width cover photo behind the avatar */}
-      <div className="hero-cover" aria-hidden="true">
+      {/* Cinematic banner with rounded corners */}
+      <div className="hero-banner" aria-hidden="true">
+        {/* Use /public/hero-bg.jpg (or .webp). Export ≥ 2400px wide for crispness */}
         <Image
-          src="/hero-bg.jpg"      // file lives in /public/hero-bg.jpg
-          alt=""                  // decorative
+          src="/hero-bg.jpg"
+          alt=""
           fill
           priority
+          quality={100}
           sizes="100vw"
-          className="hero-cover-img"
+          className="hero-banner-img"
         />
-        <div className="hero-cover-overlay" />
+        <div className="hero-banner-overlay" />
       </div>
-      {/* END INSERT */}
 
       <motion.div
         className="hero-content"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.65 }}
       >
-        {/* round avatar */}
+        {/* Avatar — points to /public/profile.jpg */}
         <Image
-          src="/profile.jpg"      // file lives in /public/profile.jpg
+          src="/profile.jpg"
           width={140}
           height={140}
           alt="Khaja Mujahiddin Mohammed"
