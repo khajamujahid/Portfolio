@@ -8,7 +8,21 @@ import TechMarquee from '@/components/TechMarquee';
 export default function Hero() {
   return (
     <section id="home" className="section hero" aria-labelledby="hero-title">
+      {/* animated network background */}
       <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+      {/* full-width cover photo behind the avatar */}
+      <div className="hero-cover" aria-hidden="true">
+        <Image
+          src="/hero-bg.jpg"     // <-- your banner in /public
+          alt=""                 // decorative
+          fill
+          priority
+          sizes="100vw"
+          className="hero-cover-img"
+        />
+        <div className="hero-cover-overlay" />
+      </div>
 
       <motion.div
         className="hero-content"
@@ -16,9 +30,9 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {/* Avatar — points to /public/profile.jpg */}
+        {/* round avatar */}
         <Image
-          src="/profile.jpg"
+          src="/profile.jpg"     // <-- your avatar in /public
           width={140}
           height={140}
           alt="Khaja Mujahiddin Mohammed"
