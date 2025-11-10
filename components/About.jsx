@@ -5,11 +5,7 @@ export default function About() {
     <section id="about" className="section" aria-labelledby="about-title">
       <h2 id="about-title">About</h2>
       <p>
-        Data Engineer & Data Scientist with 4+ years of experience building scalable cloud-based analytics
-        platforms, machine learning pipelines, and interactive BI dashboards. Skilled in NLP, Computer Vision,
-        GenAI (LLMs, RAG), and real-time data engineering using AWS, Python, and Spark. 
-        Proven impact: reduced cloud costs by 15%, improved forecasting accuracy with LSTMs, and automated
-        reporting cycles by 40% across business domains.
+        Recent Master’s in Data Science graduate (University of New Haven, May 2025, GPA 3.29) with hands-on experience building real-time AWS data pipelines (Kinesis → Glue → Lambda → S3), interactive Power BI dashboards with DAX, and Python automation (pandas, SQLAlchemy) during a 4-month Data Scientist internship at Innover Global (Aug 2025 – Present) and a 2.5-year part-time Jr. Data Analyst role at SRIK Consulting Services. Delivered 8–10 production Power BI dashboards used by 50+ stakeholders across finance and HR teams, automated monthly reporting workflows that saved ~8 hours per analyst per week, and developed a multimodal fake-news detection pipeline (Airflow + Hugging Face Transformers) as my capstone project, achieving 85% accuracy and deployed live on Hugging Face Spaces. Proficient in SQL, Python, Power BI (DAX, Power Query, RLS), PySpark, Flask APIs, and AWS cloud services. Additional academic projects include AdventureWorks sales analytics, Titanic survival prediction, and Microsoft Fabric real-time intelligence with KQL and Eventstream. Actively seeking Junior Data Analyst, BI Analyst, or entry-level Data Engineer roles in USA. Available immediately. Let’s connect!
       </p>
       <div className="about-grid">
         <div className="about-card">
