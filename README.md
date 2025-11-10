@@ -2,7 +2,7 @@
 
 **Entry-Level Data Analyst | SQL • Python • Power BI**  
 Recent MS Data Science grad (University of New Haven, May 2025)  
-CT, USA | [LinkedIn](https://linkedin.com/in/mujahiddin-md-6b21b1390) | [Portfolio](https://portfolio-one-theta-71.vercel.app) | [Email](mailto:muhammedshoaib835@gmail.com)
+CT, USA | [LinkedIn](https://www.linkedin.com/in/mujahiddin-md-6b21b1390/) | [Portfolio](https://portfolio-one-theta-71.vercel.app) | [Email](mailto:muhammedshoaib835@gmail.com)
 
 ## About
 Actively applying for **Junior Data Analyst / BI Analyst** roles.  
