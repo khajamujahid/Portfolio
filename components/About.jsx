@@ -5,7 +5,7 @@ export default function About() {
     <section id="about" className="section" aria-labelledby="about-title">
       <h2 id="about-title">About</h2>
       <p>
-        As a senior-level data engineer and analyst with more than 6 years of experience, currently serving as a Data Engineer at Optum, I design scalable analytics platforms and machine-learning pipelines across healthcare, telecom, and retail. I have delivered end-to-end cloud data solutions on Azure and AWS, including a Medallion lakehouse architecture and automated feature-engineering pipelines that cut data-prep latency by 30%. By building production-grade NLP and predictive models and creating interactive BI dashboards, I translate complex data into actionable insights. Aiming to apply this expertise to accelerate data-driven decision-making and improve outcomes for a forward-thinking organization.
+        As a senior-level data engineer and analyst with more than 5 years of experience, currently serving as a Data Engineer at Optum, I design scalable analytics platforms and machine-learning pipelines across healthcare, telecom, and retail. I have delivered end-to-end cloud data solutions on Azure and AWS, including a Medallion lakehouse architecture and automated feature-engineering pipelines that cut data-prep latency by 30%. By building production-grade NLP and predictive models and creating interactive BI dashboards, I translate complex data into actionable insights. Aiming to apply this expertise to accelerate data-driven decision-making and improve outcomes for a forward-thinking organization.
       </p>
       <div className="about-grid">
         <div className="about-card">
