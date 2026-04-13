@@ -50,13 +50,13 @@ export default function Hero() {
         </div>
 
         <div className="subheadlines" aria-label="Highlights">
-          <span>6+ years scaling analytics pipelines (Healthcare, Telecom, Retail)</span>
+          <span>5+ years scaling analytics pipelines (Healthcare, Telecom, Retail)</span>
           <span>Architecting Medallion Lakehouses on Azure & AWS</span>
           <span>Deploying NLP & Predictive Models</span>
         </div>
 
         <div className="metrics">
-          <div className="metric"><strong>6+ yrs</strong><span>Experience</span></div>
+          <div className="metric"><strong>5+ yrs</strong><span>Experience</span></div>
           <div className="metric"><strong>30%</strong><span>Faster Data Prep</span></div>
           <div className="metric"><strong>NLP</strong><span>Whisper & VAD</span></div>
           <div className="metric"><strong>MS</strong><span>Data Science</span></div>
