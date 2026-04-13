@@ -18,8 +18,6 @@ export default function Contact(){
           <p><strong>Phone:</strong> <a href="tel:+13477365812">+1 (347) 736-5812</a></p>
           <p><strong>LinkedIn:</strong> <a href={contacts.linkedin} target="_blank" rel="noopener">{contacts.linkedin.replace('https://www.linkedin.com/','/')}</a></p>
           <p><strong>GitHub:</strong> <a href={contacts.github} target="_blank" rel="noopener">{contacts.github.replace('https://','/')}</a></p>
-          <p><strong>Twitter:</strong> <a href={contacts.twitter} target="_blank" rel="noopener">@Khaja7262</a></p>
-          <p><strong>Instagram:</strong> <a href={contacts.instagram} target="_blank" rel="noopener">@khaja_2310</a></p>
         </div>
         <form className="contact-card" onSubmit={openEmail} aria-label="Contact form">
           <label htmlFor="name">Name</label>
