@@ -1,6 +1,6 @@
 # Hi, I'm Khaja Mujahiddin
 
-**Senior Data Engineer | 6+ Years of Experience | Azure & AWS Lakehouse Architect** M.S. Data Science (University of New Haven) | B.Tech Mechanical Engineering 
+**Senior Data Engineer | 5+ Years of Experience | Azure & AWS Lakehouse Architect** M.S. Data Science (University of New Haven) 
 CT, USA | [LinkedIn](https://www.linkedin.com/in/mujahiddin-md-6b21b1390/) | [Portfolio](https://portfolio-one-theta-71.vercel.app) | [Email](mailto:khajamujahiddin@gmail.com)
 
 ## About
@@ -40,10 +40,9 @@ KQL + Eventstream → Live Power BI dashboard
 [Repo](https://github.com/khajamujahiddin/fabric-real-time)
 
 ## Professional Experience
-- **Data Engineer** – Optum (Jan 2025 – Present)
+- **Data Engineer** – Optum (Jul 2025 – Present)
 - **Associate Data Engineer** – Staples (Oct 2021 – July 2023)
 - **Data Analyst** – Verizon (Aug 2019 – Sep 2021)  
 
 ## Education
 - **M.S. Data Science** – University of New Haven (GPA 3.29)
-- **B.Tech Mechanical Engineering** – Sreenidhi Institute of Science & Technology (GPA 7.9)
