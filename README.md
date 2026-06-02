@@ -41,8 +41,8 @@ KQL + Eventstream → Live Power BI dashboard
 
 ## Professional Experience
 - **Data Engineer** – Optum (Jul 2025 – Present)
-- **Associate Data Engineer** – Staples (Oct 2021 – July 2023)
-- **Data Analyst** – Verizon (Aug 2019 – Sep 2021)  
+- **Jr. Data Engineer** – Staples (Oct 2021 – July 2023)
+- **PowerBI Developer** – SRIK Consulting and Services (Aug 2019 – Sep 2021)  
 
 ## Education
 - **M.S. Data Science** – University of New Haven (GPA 3.29)
