@@ -7,8 +7,8 @@ CT, USA | [LinkedIn](https://www.linkedin.com/in/mujahiddin-md-6b21b1390/) | [Po
 Senior-level data engineer currently at **Optum**, designing scalable analytics platforms and machine-learning pipelines across healthcare, telecom, and retail.
 Actively applying for **Data Engineer / Data Analyst / Machine Learning Engineer** roles.  
 Hands-on with:
-- Real-time AWS pipelines (Kinesis → Glue → Lambda) – current US internship  
-- Production Power BI dashboards (8–10 dashboards, 50+ users) – part-time role  
+- Real-time AWS pipelines (Kinesis → Glue → Lambda) – Current Contract role
+- Production Power BI dashboards (8–10 dashboards, 50+ users) – part-time role
 - End-to-end academic projects (customer segmentation, sales analytics, real-time intelligence)
 
 **Core Achievements:**
