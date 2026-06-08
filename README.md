@@ -1,7 +1,7 @@
 # Hi, I'm Khaja Mujahiddin
 
 **Senior Data Engineer | 5+ Years of Experience | Azure & AWS Lakehouse Architect** M.S. Data Science (University of New Haven) 
-CT, USA | [LinkedIn](https://www.linkedin.com/in/mujahiddin-md-6b21b1390/) | [Portfolio](https://portfolio-one-theta-71.vercel.app) | [Email](mailto:khajamujahiddin@gmail.com)
+CT, USA | [LinkedIn](https://www.linkedin.com/in/khaja-muj-76b529410) | [Portfolio](https://portfolio-one-theta-71.vercel.app) | [Email](mailto:khajamujahiddin@gmail.com)
 
 ## About
 Senior-level data engineer currently at **Optum**, designing scalable analytics platforms and machine-learning pipelines across healthcare, telecom, and retail.
