@@ -49,19 +49,26 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.08 }}
         >
-          <div className="window-frame" aria-hidden="false">
+          <div className="window-frame window-frame-photo">
             <div className="window-chrome"><i /><i /><i /></div>
-            <div className="window-body">
-              <Image
-                src="/profile.jpg"
-                width={160}
-                height={160}
-                alt="Khaja Mujahiddin Mohammed"
-                className="hero-avatar"
-                priority
-              />
-              <p className="window-title">khaja.exe</p>
-              <p className="window-sub">Backend &amp; Data Platforms · New Haven, CT</p>
+            <div className="window-body window-body-fill">
+              <div className="window-photo-stack">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="window-photo-bg" src="/profile-bg.jpg" alt="" aria-hidden="true" />
+                <Image
+                  src="/profile.jpg"
+                  alt="Khaja Mujahiddin Mohammed"
+                  fill
+                  priority
+                  className="window-photo-main"
+                  sizes="(max-width: 960px) 92vw, 420px"
+                />
+                <div className="window-photo-scrim" />
+                <div className="window-photo-caption">
+                  <p className="window-title">khaja.exe</p>
+                  <p className="window-sub">Backend &amp; Data Platforms · New Haven, CT</p>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
