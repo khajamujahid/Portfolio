@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Khaja Mujahiddin Mohammed — Senior Data Engineer",
-  description: "Senior Data Engineer & Lakehouse Architect — PySpark, Azure, AWS, NLP, and Machine Learning."
+  title: "Khaja Mujahiddin Mohammed — Senior Software Engineer",
+  description: "Senior Software Engineer | Backend & Data Platforms — FastAPI, Spring Boot, Kafka, AWS, Kubernetes, and grounded AI systems."
 };
 
 import "./globals.css";
