@@ -1,40 +1,34 @@
-'use client';
-import NavBar from '@/components/NavBar';
-import Hero from '@/components/Hero';
-import LiveLabs from '@/components/LiveLabs';
-import About from '@/components/About';
-import Projects from '@/components/Projects';
-import Experience from '@/components/Experience';
-import Skills from '@/components/Skills';
-import Education from '@/components/Education';
-import Certifications from '@/components/Certifications';
-import Contact from '@/components/Contact';
-import Chatbot from '@/components/Chatbot';
+import ReadingProgress from "@/components/ReadingProgress";
+import NavBar from "@/components/NavBar";
+import Hero from "@/components/Hero";
+import Manifesto from "@/components/Manifesto";
+import Projects from "@/components/Projects";
+import LiveLabs from "@/components/LiveLabs";
+import Experience from "@/components/Experience";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
 
-export default function Page() {
+export default function HomePage() {
   return (
     <>
-      <div className="parallax-bg" aria-hidden="true" />
-      <div className="dot-bg" aria-hidden="true" />
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="shapes-bg" src="/shapes-bg.svg" alt="" />
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <ReadingProgress />
       <NavBar />
-      <main>
+      <main id="main">
         <Hero />
+        <Manifesto />
         <Projects />
         <LiveLabs />
-        <About />
         <Experience />
-        <Skills />
-        <Education />
-        <Certifications />
+        <About />
         <Contact />
       </main>
       <footer className="site-footer">
-        <div className="footer-fun">Always curious. Always shipping.</div>
-        © {new Date().getFullYear()} Khaja Mujahiddin Mohammed
+        <span>© {new Date().getFullYear()} Khaja Mujahiddin Mohammed</span>
+        <span>Code · Curiosity · Consequence</span>
       </footer>
-      <Chatbot />
     </>
   );
 }
