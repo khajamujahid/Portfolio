@@ -2,12 +2,8 @@
 import { motion } from 'framer-motion';
 export default function Certifications(){
   const certs = [
-    "AWS Cloud Practitioner — EduBridge",
-    "Google Data Analytics — Coursera",
-    "HackerRank SQL — 5 Star",
-    "MySQL Developer — Udemy",
-    "PGDCA (Post Graduate Diploma in Computer Applications)",
-    "Data Analytics & Visualization Virtual Experience — Forage"
+    "Oracle Cloud Infrastructure — Multicloud Architect Associate",
+    "Oracle Analytics Cloud (OAC)"
   ];
   return (
     <section id="certifications" className="section" aria-labelledby="certs-title">

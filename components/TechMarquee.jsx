@@ -2,15 +2,15 @@
 export default function TechMarquee(){
   const logos = [
     { name: 'Python', svg: '<path d="M20 12a8 8 0 0 1-8 8h-4a4 4 0 0 1-4-4V9a5 5 0 0 1 5-5h5v4H9a1 1 0 0 0-1 1v7a2 2 0 0 0 2 2h2a4 4 0 0 0 4-4h4z" />' },
-    { name: 'TensorFlow', svg: '<path d="M4 12 12 7l8 5-3 1.8v4.2l-5 3-5-3v-4.2zM12 7v14" />' },
-    { name: 'PyTorch', svg: '<circle cx="18" cy="12" r="2"/><path d="M12 3v9a7 7 0 1 0 7 7" />' },
+    { name: 'Java', svg: '<path d="M12 2c2 3-2 4 0 7 3-1 5 2 3 4-4 3-9-1-7-5 1-2 3-3 4-6zM8 20h8M9 17h6" />' },
+    { name: 'TypeScript', svg: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M12 12v6" />' },
+    { name: 'FastAPI', svg: '<path d="M5 12h14M12 5l7 7-7 7" />' },
+    { name: 'Spring Boot', svg: '<path d="M12 3a9 9 0 1 0 9 9"/><circle cx="12" cy="12" r="3" />' },
+    { name: 'Kafka', svg: '<circle cx="7" cy="12" r="2"/><circle cx="17" cy="7" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 12h6M15 8l-4 3M15 16l-4-3" />' },
     { name: 'AWS', svg: '<path d="M3 14l9-6 9 6-9 6-9-6z"/>' },
     { name: 'Docker', svg: '<rect x="3" y="10" width="3" height="3"/><rect x="7" y="10" width="3" height="3"/><rect x="11" y="10" width="3" height="3"/><rect x="7" y="6" width="3" height="3"/><path d="M2 15h18a3 3 0 0 1-3 3H8a6 6 0 0 1-6-6" />' },
     { name: 'Kubernetes', svg: '<polygon points="12,3 21,8 21,16 12,21 3,16 3,8" />' },
-    { name: 'Spark', svg: '<path d="M3 18l9-15 3 5 6 1-9 9-2-5-7 5z" />' },
-    { name: 'Power BI', svg: '<rect x="3" y="10" width="3" height="8"/><rect x="8" y="7" width="3" height="11"/><rect x="13" y="4" width="3" height="14"/>' },
-    { name: 'Tableau', svg: '<path d="M12 3v6M12 15v6M3 12h6M15 12h6M6 6v4M18 14v4M6 14v4M18 6v4"/>' },
-    { name: 'Hugging Face', svg: '<circle cx="9" cy="10" r="1.2"/><circle cx="15" cy="10" r="1.2"/><path d="M6 14c2 2 8 2 10 0" />' }
+    { name: 'PostgreSQL', svg: '<ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7v6c0 1.7 3.1 3 7 3s7-1.3 7-3V7M5 13c0 1.7 3.1 3 7 3s7-1.3 7-3" />' }
   ];
   return (
     <div className="marquee-wrap" aria-label="Technologies">

@@ -32,15 +32,15 @@ export default function Hero() {
         </h1>
 
         <p className="headline">
-          Senior Data Engineer | Azure & AWS Lakehouse Architect | PySpark • Python • NLP
+          Senior Software Engineer | Backend &amp; Data Platforms
         </p>
 
         <div className="domain-badges" role="list">
-          <span className="badge" role="listitem">Data Engineering</span>
-          <span className="badge" role="listitem">Medallion Architecture</span>
-          <span className="badge" role="listitem">NLP / Whisper</span>
-          <span className="badge" role="listitem">PySpark</span>
-          <span className="badge" role="listitem">Cloud Native</span>
+          <span className="badge" role="listitem">Backend Engineering</span>
+          <span className="badge" role="listitem">Microservices</span>
+          <span className="badge" role="listitem">Kafka / Event-Driven</span>
+          <span className="badge" role="listitem">Python &amp; Java</span>
+          <span className="badge" role="listitem">AWS / Kubernetes</span>
         </div>
 
         <div className="hero-cta">
@@ -50,15 +50,15 @@ export default function Hero() {
         </div>
 
         <div className="subheadlines" aria-label="Highlights">
-          <span>5+ years scaling analytics pipelines (Healthcare, Telecom, Retail)</span>
-          <span>Architecting Medallion Lakehouses on Azure & AWS</span>
-          <span>Deploying NLP & Predictive Models</span>
+          <span>5+ years owning high-throughput microservices &amp; data platforms</span>
+          <span>Python, Java, FastAPI, Spring Boot, Kafka, PostgreSQL</span>
+          <span>Shipping RAG / agentic AI systems with production guardrails</span>
         </div>
 
         <div className="metrics">
           <div className="metric"><strong>5+ yrs</strong><span>Experience</span></div>
-          <div className="metric"><strong>30%</strong><span>Faster Data Prep</span></div>
-          <div className="metric"><strong>NLP</strong><span>Whisper & VAD</span></div>
+          <div className="metric"><strong>35%</strong><span>Throughput Lift</span></div>
+          <div className="metric"><strong>99.9%</strong><span>Peak Uptime</span></div>
           <div className="metric"><strong>MS</strong><span>Data Science</span></div>
         </div>
 
