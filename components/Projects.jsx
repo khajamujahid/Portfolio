@@ -5,18 +5,6 @@ import { projects } from '@/lib/data';
 
 const allTags = Array.from(new Set(projects.flatMap((p) => p.tags))).sort();
 
-const PREVIEWS = {
-  'VERITAS HITL Platform': `claim = gemini.extract(article)
-facts = fact_check_api.verify(claim)
-report = forensics.ela(image)`,
-  'MIKA OS / Clinical AI Agent': `docs = chroma.similarity_search(q, k=4)
-answer = gemini.generate(context=docs)
-assert grounded(answer, docs)`,
-  'Pedestrian & Cyclist Segmentation (U-Net)': `mask = unet.predict(frame)
-overlay = colorize(mask)
-iou = evaluate(overlay, labels)`,
-};
-
 export default function Projects() {
   const [active, setActive] = useState(null);
   const [tag, setTag] = useState('All');
@@ -27,7 +15,7 @@ export default function Projects() {
       <img className="wavy" src="/wavy-bottom.svg" alt="" />
       <div className="section-head">
         <h2 id="projects-title">Projects</h2>
-        <p className="lede">Click a window — each one is a system I&apos;ve built and shipped.</p>
+        <p className="lede">A full pass across my GitHub — AI systems, CV/ML, data pipelines, and BI dashboards.</p>
       </div>
       <div className="filter-row">
         {['All', ...allTags].map((t) => (
@@ -70,7 +58,7 @@ export default function Projects() {
             <div className="modal-body">
               <h3>{active.title}</h3>
               <p>{active.desc}</p>
-              <pre className="lab-code">{PREVIEWS[active.title]}</pre>
+              <pre className="lab-code">{active.preview || '// open the GitHub repo for source'}</pre>
               <div className="modal-tags">{active.tags.map((t) => <span key={t}>{t}</span>)}</div>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 8 }}>
                 {active.links.map((l) => (
