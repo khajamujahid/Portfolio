@@ -1,46 +1,32 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { contacts } from '@/lib/data';
 
 const LINKS = [
-  'home', 'labs', 'about', 'projects', 'experience', 'skills', 'education', 'certifications', 'contact',
+  { id: 'about', label: 'about' },
+  { id: 'labs', label: 'labs' },
+  { id: 'projects', label: 'projects' },
+  { id: 'experience', label: 'experience' },
+  { id: 'contact', label: 'contact' },
 ];
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
-  const [clicks, setClicks] = useState(0);
-  useEffect(() => {
-    if (clicks === 5) {
-      alert('Easter egg unlocked: ship reliable systems, then make them beautiful.');
-      setClicks(0);
-    }
-  }, [clicks]);
-  const [themeIcon, setThemeIcon] = useState('🌙');
-  useEffect(() => {
-    const saved = localStorage.getItem('themeMode');
-    if (saved === 'light') {
-      document.documentElement.classList.add('light');
-      setThemeIcon('🌞');
-    }
-  }, []);
-  const toggleTheme = () => {
-    const isLight = document.documentElement.classList.toggle('light');
-    localStorage.setItem('themeMode', isLight ? 'light' : 'dark');
-    setThemeIcon(isLight ? '🌞' : '🌙');
-  };
   return (
     <header className="header">
-      <a className="brand" onClick={() => setClicks((c) => c + 1)} href="#home">KM</a>
+      <a className="brand" href="#home">KM</a>
       <nav className="nav" aria-label="Primary">
         <button className="nav-toggle btn" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls="nav-list" type="button">☰</button>
         <ul id="nav-list" aria-expanded={open}>
-          {LINKS.map((id) => (
-            <li key={id}>
-              <a onClick={() => setOpen(false)} href={`#${id}`}>{id[0].toUpperCase() + id.slice(1)}</a>
-            </li>
+          {LINKS.map((l) => (
+            <li key={l.id}><a onClick={() => setOpen(false)} href={`#${l.id}`}>{l.label}</a></li>
           ))}
+          <li><a href={contacts.resume} download>résumé</a></li>
+          <li><a href={contacts.linkedin} target="_blank" rel="noopener">linkedin</a></li>
+          <li><a href={contacts.github} target="_blank" rel="noopener">github</a></li>
+          <li><a href={`mailto:${contacts.email}`}>email</a></li>
         </ul>
       </nav>
-      <button className="mode-toggle" onClick={toggleTheme} aria-label="Toggle dark mode" type="button">{themeIcon}</button>
     </header>
   );
 }
