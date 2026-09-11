@@ -3,47 +3,48 @@
 export default function About() {
   return (
     <section id="about" className="section" aria-labelledby="about-title">
+      <img className="wavy" src="/wavy-top.svg" alt="" />
       <div className="section-head">
-        <p className="eyebrow">About</p>
-        <h2 id="about-title">Engineer first. Storyteller second.</h2>
+        <h2 id="about-title">About me</h2>
       </div>
       <p className="lede about-lede">
-        I design and operate high-throughput microservices, distributed pipelines, and cloud backends end to end —
-        architecture, SOLID implementation, CI/CD, observability, and on-call. Python, Java, TypeScript, and
-        event-driven systems are my home turf. I also ship grounded AI products with retrieval guardrails, not demos that hallucinate.
+        My name is Khaja, and I love building systems that feel intentional — fast APIs, clean event flows,
+        and AI that stays honest to its sources. With 5+ years across healthcare, payments, and connected vehicles,
+        I work the full backend pipeline: design, implementation, CI/CD, observability, and production ownership.
       </p>
       <div className="about-grid">
         <div className="about-card">
-          <h3>How I work</h3>
+          <h3>What I obsess over</h3>
           <ul>
-            <li>Own services from design → production → MTTR</li>
-            <li>Prefer boring reliability over fragile cleverness</li>
-            <li>Lead reviews; mentor juniors; write ADRs &amp; runbooks</li>
-            <li>Measure: latency, throughput, coverage, uptime</li>
+            <li>Latency, throughput, and boring reliability</li>
+            <li>SOLID services you can hand to a teammate</li>
+            <li>Guarded RAG — retrieval before generation</li>
+            <li>Runbooks, ADRs, and kind code review</li>
           </ul>
         </div>
         <div className="about-card">
-          <h3>Where I&apos;ve had impact</h3>
+          <h3>Where I&apos;ve shipped</h3>
           <ul>
-            <li>Healthcare data platforms (Optum / UHG)</li>
-            <li>B2B payments at Black Friday scale (Staples)</li>
-            <li>Connected-vehicle telemetry (BMW via SRIK)</li>
-            <li>Multimodal HITL + clinical RAG side projects</li>
+            <li>Optum — data platform microservices</li>
+            <li>Staples — B2B payment gateway</li>
+            <li>BMW (via SRIK) — vehicle telemetry</li>
+            <li>Side systems — VERITAS HITL &amp; Clinical RAG</li>
           </ul>
         </div>
         <div className="about-card code">
-          <h3>Signature snippet</h3>
-          <pre><code>{`# FastAPI + Kafka — reliable publish path
-@app.post("/events")
+          <h3>A little snippet</h3>
+          <pre><code>{`@app.post("/events")
 async def publish(event: Event):
     await producer.send_and_wait(
         "platform.events",
         event.model_dump_json().encode(),
     )
-    metrics.inc("events_published")
     return {"status": "queued"}`}</code></pre>
         </div>
       </div>
+      <p className="lede about-lede" style={{ marginTop: 22 }}>
+        Mission: combine creative systems thinking with a whole lot of polish — experiences that spark trust, not just demos.
+      </p>
     </section>
   );
 }
