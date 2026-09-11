@@ -1,32 +1,59 @@
-'use client';
-import { contacts } from '@/lib/data';
+"use client";
 
-export default function Contact(){
-  const openEmail = (e)=>{
-    e.preventDefault();
-    const name = encodeURIComponent(e.target.name.value.trim());
-    const body = encodeURIComponent(e.target.message.value.trim());
-    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
-    window.location.href = `mailto:${contacts.email}?subject=${subject}&body=${body}`;
+import { useState } from "react";
+import { contacts } from "@/lib/data";
+
+export default function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(contacts.email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
   };
+
   return (
-    <section id="contact" className="section contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <div className="contact-grid">
-        <div className="contact-card">
-          <p><strong>Email:</strong> <a href={`mailto:${contacts.email}`}>{contacts.email}</a></p>
-          <p><strong>Phone:</strong> <a href="tel:+13477365812">+1 (347) 736-5812</a></p>
-          <p><strong>LinkedIn:</strong> <a href={contacts.linkedin} target="_blank" rel="noopener">{contacts.linkedin.replace('https://www.linkedin.com/','/')}</a></p>
-          <p><strong>GitHub:</strong> <a href={contacts.github} target="_blank" rel="noopener">{contacts.github.replace('https://','/')}</a></p>
+    <section className="contact-bleed" id="contact" aria-labelledby="contact-title">
+      <div className="contact-inner">
+        <h2 id="contact-title" className="contact-title">
+          Let’s ship something that holds.
+        </h2>
+        <p className="contact-lead">
+          Platforms, APIs, data pipelines, applied AI — if reliability is the brief, I’m in.
+          A short note is enough to start.
+        </p>
+
+        <div className="contact-actions">
+          <a className="contact-email" href={`mailto:${contacts.email}`}>
+            <span aria-hidden="true">↗</span> {contacts.email}
+          </a>
+          <button type="button" className="copy-btn" onClick={copyEmail}>
+            {copied ? "Copied" : "Copy address"} ⧉
+          </button>
+          <a
+            className="contact-link"
+            href={contacts.linkedin}
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+          <a className="contact-link" href={contacts.resume} target="_blank" rel="noreferrer">
+            Resume ↗
+          </a>
+          <a
+            className="contact-link"
+            href={contacts.github}
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub ↗
+          </a>
         </div>
-        <form className="contact-card" onSubmit={openEmail} aria-label="Contact form">
-          <label htmlFor="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required />
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" placeholder="Your message" rows={4} required></textarea>
-          <button type="submit" className="btn primary">Send via Email</button>
-          <p className="muted">The form opens your mail client with a prefilled email.</p>
-        </form>
       </div>
     </section>
   );
