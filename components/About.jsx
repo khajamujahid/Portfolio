@@ -1,50 +1,49 @@
-'use client';
+import { educationList, skillsList } from "@/lib/data";
 
 export default function About() {
+  const stack = skillsList
+    .flatMap((g) => g.items)
+    .slice(0, 12)
+    .join(" · ");
+
+  const ms = educationList[0];
+
   return (
-    <section id="about" className="section" aria-labelledby="about-title">
-      <img className="wavy" src="/wavy-top.svg" alt="" />
-      <div className="section-head">
-        <h2 id="about-title">About me</h2>
-      </div>
-      <p className="lede about-lede">
-        My name is Khaja, and I love building systems that feel intentional — fast APIs, clean event flows,
-        and AI that stays honest to its sources. With 5+ years across healthcare, payments, and connected vehicles,
-        I work the full backend pipeline: design, implementation, CI/CD, observability, and production ownership.
-      </p>
+    <section className="section" id="about" aria-labelledby="about-title">
       <div className="about-grid">
-        <div className="about-card">
-          <h3>What I obsess over</h3>
-          <ul>
-            <li>Latency, throughput, and boring reliability</li>
-            <li>SOLID services you can hand to a teammate</li>
-            <li>Guarded RAG — retrieval before generation</li>
-            <li>Runbooks, ADRs, and kind code review</li>
-          </ul>
+        <div aria-hidden="true" className="km-mark">
+          km
         </div>
-        <div className="about-card">
-          <h3>Where I&apos;ve shipped</h3>
-          <ul>
-            <li>Optum — data platform microservices</li>
-            <li>Staples — B2B payment gateway</li>
-            <li>BMW (via SRIK) — vehicle telemetry</li>
-            <li>Side systems — VERITAS HITL &amp; Clinical RAG</li>
-          </ul>
-        </div>
-        <div className="about-card code">
-          <h3>A little snippet</h3>
-          <pre><code>{`@app.post("/events")
-async def publish(event: Event):
-    await producer.send_and_wait(
-        "platform.events",
-        event.model_dump_json().encode(),
-    )
-    return {"status": "queued"}`}</code></pre>
+        <div className="about-copy">
+          <p className="eyebrow">About</p>
+          <h2 id="about-title" className="section-title">
+            Curiosity is my default setting.
+          </h2>
+          <p>
+            I’m Khaja. I started in connected-vehicle platforms, moved through high-throughput
+            payment systems, and now build data platforms at Optum. I like the moment a messy
+            distributed problem collapses into a clean contract — and the discipline to keep it
+            observable after launch.
+          </p>
+          <p>
+            Most side projects begin with an irritation: fake news that travels too fast, clinical
+            answers that need grounding, pipelines that miss their SLA. Then I build until the
+            system can explain itself.
+          </p>
+
+          <div className="about-meta">
+            <div className="meta-card">
+              <strong>{ms.title}</strong>
+              <span>{ms.place}</span>
+              {ms.bullets?.[0] && <p style={{ marginTop: "0.55rem" }}>{ms.bullets[0]}</p>}
+            </div>
+            <div className="meta-card">
+              <strong>Usually within reach</strong>
+              <p className="stack-line">{stack}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <p className="lede about-lede" style={{ marginTop: 22 }}>
-        Mission: combine creative systems thinking with a whole lot of polish — experiences that spark trust, not just demos.
-      </p>
     </section>
   );
 }
