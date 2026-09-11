@@ -5,86 +5,66 @@ import { motion } from 'framer-motion';
 import { contacts } from '@/lib/data';
 import TechMarquee from '@/components/TechMarquee';
 
-const SNIPPET = `POST /events  →  Kafka  →  FastAPI workers
-p95 latency:  < 100ms   uptime: 99.9%
-stack: Python · Java · TypeScript · AWS EKS`;
-
 export default function Hero() {
   return (
-    <section id="home" className="section hero hero-bento" aria-labelledby="hero-title">
-      <canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-      <div className="hero-grid">
+    <section id="home" className="section hero" aria-labelledby="hero-title">
+      <div className="hero-lars">
         <motion.div
-          className="hero-main"
-          initial={{ opacity: 0, y: 18 }}
+          className="hero-copy"
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
         >
-          <Image
-            src="/profile.jpg"
-            width={160}
-            height={160}
-            alt="Khaja Mujahiddin Mohammed"
-            className="hero-avatar"
-            priority
-            sizes="(max-width: 640px) 120px, 160px"
-          />
-          <p className="eyebrow">Available for SWE / Backend / AI roles</p>
+          <p className="eyebrow">Senior Software Engineer</p>
           <h1 id="hero-title">
-            <span className="hi">Hi, I&apos;m</span>{' '}
+            <span className="hi">Hey there — I&apos;m</span>
             <span className="name">Khaja Mujahiddin Mohammed</span>
           </h1>
           <p className="headline">
-            Senior Software Engineer building resilient backends, event-driven platforms, and grounded AI systems.
+            I craft resilient backends, event-driven platforms, and grounded AI systems —
+            with the polish of a product thinker and the rigor of someone who&apos;s been on-call.
           </p>
           <div className="domain-badges" role="list">
-            <span className="badge" role="listitem">Backend platforms</span>
-            <span className="badge" role="listitem">Kafka / microservices</span>
+            <span className="badge" role="listitem">FastAPI · Spring Boot</span>
+            <span className="badge" role="listitem">Kafka · microservices</span>
             <span className="badge" role="listitem">RAG with guardrails</span>
-            <span className="badge" role="listitem">AWS · K8s · Observability</span>
+            <span className="badge" role="listitem">AWS · Kubernetes</span>
           </div>
           <div className="hero-cta">
-            <a href="#labs" className="btn primary">Try live labs</a>
-            <a href="#projects" className="btn">Projects</a>
-            <a href={contacts.resume} className="btn" download>Resume</a>
+            <a href="#projects" className="btn primary">See projects</a>
+            <a href="#labs" className="btn">Play with labs</a>
+            <a href={contacts.resume} className="btn" download>Résumé</a>
           </div>
           <div className="metrics">
-            <div className="metric"><strong>5+ yrs</strong><span>Shipping prod systems</span></div>
-            <div className="metric"><strong>35%</strong><span>Throughput lift</span></div>
-            <div className="metric"><strong>&lt;100ms</strong><span>Peak API latency</span></div>
-            <div className="metric"><strong>99.9%</strong><span>Black Friday uptime</span></div>
+            <div className="metric"><strong>5+ yrs</strong><span>shipping prod</span></div>
+            <div className="metric"><strong>35%</strong><span>throughput lift</span></div>
+            <div className="metric"><strong>&lt;100ms</strong><span>peak API latency</span></div>
+            <div className="metric"><strong>99.9%</strong><span>BF uptime</span></div>
           </div>
         </motion.div>
 
-        <motion.aside
+        <motion.div
           className="hero-side"
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
+          transition={{ duration: 0.7, delay: 0.08 }}
         >
-          <div className="terminal-card">
-            <div className="terminal-bar">
-              <span /><span /><span />
-              <em>platform-status.sh</em>
-            </div>
-            <pre>{SNIPPET}</pre>
-          </div>
-          <div className="signal-cards">
-            <div className="signal">
-              <strong>Optum</strong>
-              <span>Data platform microservices · FastAPI · Kafka</span>
-            </div>
-            <div className="signal">
-              <strong>Staples</strong>
-              <span>Payments gateway · 99.7% auth success</span>
-            </div>
-            <div className="signal">
-              <strong>BMW</strong>
-              <span>50k+ vehicle telemetry · gRPC · EKS</span>
+          <div className="window-frame" aria-hidden="false">
+            <div className="window-chrome"><i /><i /><i /></div>
+            <div className="window-body">
+              <Image
+                src="/profile.jpg"
+                width={160}
+                height={160}
+                alt="Khaja Mujahiddin Mohammed"
+                className="hero-avatar"
+                priority
+              />
+              <p className="window-title">khaja.exe</p>
+              <p className="window-sub">Backend &amp; Data Platforms · New Haven, CT</p>
             </div>
           </div>
-        </motion.aside>
+        </motion.div>
       </div>
       <TechMarquee />
     </section>
