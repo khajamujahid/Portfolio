@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Khaja Mujahiddin Mohammed — Senior Software Engineer",
-  description: "Senior Software Engineer | Backend & Data Platforms — FastAPI, Spring Boot, Kafka, AWS, Kubernetes, and grounded AI systems."
+  description: "Senior Software Engineer | Backend & Data Platforms — playful portfolio with live engineering labs."
 };
 
 import "./globals.css";
