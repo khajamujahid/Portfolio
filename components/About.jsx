@@ -1,50 +1,53 @@
-'use client';
+"use client";
+
+import { educationList, stackLine } from "@/lib/data";
 
 export default function About() {
   return (
-    <section id="about" className="section" aria-labelledby="about-title">
-      <img className="wavy" src="/wavy-top.svg" alt="" />
-      <div className="section-head">
-        <h2 id="about-title">About me</h2>
+    <section className="km-about" id="about" aria-labelledby="km-about-title">
+      <div className="km-about-story">
+        <p className="km-kicker">About</p>
+        <h2 id="km-about-title" className="km-display">
+          New Haven, systems, and a compiler nickname
+        </h2>
+        <p>
+          I&apos;m Khaja Mujahiddin Mohammed — a senior software engineer for backend and
+          data platforms, based in New Haven, Connecticut. I like systems that stay
+          quiet when traffic spikes and pipelines that tell you the truth.
+        </p>
+        <p>
+          I earned an M.S. in Data Science at the University of New Haven after a
+          B.Tech in Hyderabad. These days I work at Optum on distributed ETL and
+          microservice platforms. Before that: B2B payments at Staples, then vehicle
+          telemetry for BMW Group through SRIK Consulting.
+        </p>
+        <p>
+          When a problem needs retrieval, I reach for RAG. When it needs throughput,
+          I reach for Kafka, Kubernetes, and a well-observed API.
+        </p>
       </div>
-      <p className="lede about-lede">
-        My name is Khaja, and I love building systems that feel intentional — fast APIs, clean event flows,
-        and AI that stays honest to its sources. With 5+ years across healthcare, payments, and connected vehicles,
-        I work the full backend pipeline: design, implementation, CI/CD, observability, and production ownership.
-      </p>
-      <div className="about-grid">
-        <div className="about-card">
-          <h3>What I obsess over</h3>
-          <ul>
-            <li>Latency, throughput, and boring reliability</li>
-            <li>SOLID services you can hand to a teammate</li>
-            <li>Guarded RAG — retrieval before generation</li>
-            <li>Runbooks, ADRs, and kind code review</li>
+
+      <aside className="km-about-side">
+        <div className="km-panel">
+          <p className="km-kicker">Stack</p>
+          <ul className="km-stack">
+            {stackLine.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </div>
-        <div className="about-card">
-          <h3>Where I&apos;ve shipped</h3>
-          <ul>
-            <li>Optum — data platform microservices</li>
-            <li>Staples — B2B payment gateway</li>
-            <li>BMW (via SRIK) — vehicle telemetry</li>
-            <li>Side systems — VERITAS HITL &amp; Clinical RAG</li>
+        <div className="km-panel">
+          <p className="km-kicker">School</p>
+          <ul className="km-school">
+            {educationList.map((ed) => (
+              <li key={ed.title}>
+                <strong>{ed.title}</strong>
+                <span>{ed.place}</span>
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="about-card code">
-          <h3>A little snippet</h3>
-          <pre><code>{`@app.post("/events")
-async def publish(event: Event):
-    await producer.send_and_wait(
-        "platform.events",
-        event.model_dump_json().encode(),
-    )
-    return {"status": "queued"}`}</code></pre>
-        </div>
-      </div>
-      <p className="lede about-lede" style={{ marginTop: 22 }}>
-        Mission: combine creative systems thinking with a whole lot of polish — experiences that spark trust, not just demos.
-      </p>
+      </aside>
     </section>
   );
 }
