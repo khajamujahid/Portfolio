@@ -1,13 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import KmSculpture from "@/components/KmSculpture";
-import MagneticName from "@/components/MagneticName";
 
 const CTAS = [
-  { href: "/work", label: "→ view my projects" },
-  { href: "/about", label: "→ learn more" }
+  { href: "#work", label: "→ view my projects" },
+  { href: "#about", label: "→ learn more" }
 ];
 
 export default function Hero({ ready }) {
@@ -28,7 +26,7 @@ export default function Hero({ ready }) {
   };
 
   return (
-    <section className="km-hero" aria-labelledby="km-name">
+    <section className="km-hero" id="top" aria-labelledby="km-name">
       <div className="km-hero-drift" aria-hidden="true">
         <span className="km-blob km-blob-a" />
         <span className="km-blob km-blob-b" />
@@ -64,7 +62,7 @@ export default function Hero({ ready }) {
               <span className="km-outline">HEY, I AM</span>{" "}
               <span className="km-solid km-hero-nameblock">
                 <span className="km-hero-namewave">
-                  <MagneticName>KHAJA MUJAHIDDIN</MagneticName>
+                  KHAJA MUJAHIDDIN
                   <svg className="km-wave" viewBox="0 0 800 48" preserveAspectRatio="none" aria-hidden="true">
                     <path
                       d="M0 24 C50 6 100 42 150 24 S250 6 300 24 S400 42 450 24 S550 6 600 24 S700 42 800 24"
@@ -76,13 +74,13 @@ export default function Hero({ ready }) {
                   </svg>
                 </span>
                 <br className="km-hero-br" />
-                <MagneticName className="km-solid">{" MOHAMMED"}</MagneticName>
+                <span className="km-solid"> MOHAMMED</span>
               </span>
             </span>
 
             <span className="km-hero-line km-hero-line-nick">
               <span className="km-outline">BUT YOU CAN CALL ME</span>{" "}
-              <MagneticName className="km-solid">KEVIN</MagneticName>
+              <span className="km-solid">KHAJA.EXE</span>
             </span>
           </motion.h1>
 
@@ -105,7 +103,7 @@ export default function Hero({ ready }) {
           >
             {CTAS.map((item) => (
               <li key={item.label}>
-                <Link href={item.href}>{item.label}</Link>
+                <a href={item.href}>{item.label}</a>
               </li>
             ))}
           </motion.ul>
