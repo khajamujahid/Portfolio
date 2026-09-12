@@ -4,12 +4,6 @@ import { useEffect, useState } from "react";
 import Splash from "@/components/Splash";
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import LiveLabs from "@/components/LiveLabs";
-import Experience from "@/components/Experience";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Cursor from "@/components/Cursor";
 
 export default function HomePage() {
   const [booted, setBooted] = useState(false);
@@ -19,18 +13,21 @@ export default function HomePage() {
     return () => window.clearTimeout(failsafe);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.classList.add("km-home");
+    document.body.classList.add("km-home");
+    return () => {
+      document.documentElement.classList.remove("km-home");
+      document.body.classList.remove("km-home");
+    };
+  }, []);
+
   return (
     <>
       <Splash onDone={() => setBooted(true)} />
-      <Cursor />
       <NavBar revealed={booted} />
-      <main id="main">
+      <main id="main" className="km-home-main">
         <Hero ready={booted} />
-        <Projects />
-        <LiveLabs />
-        <Experience />
-        <About />
-        <Contact />
       </main>
     </>
   );
