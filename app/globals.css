@@ -95,62 +95,6 @@ body.km-nav-lock {
   overflow: hidden;
 }
 
-/* Home: hero-only landing — no page scroll */
-html.km-home,
-body.km-home {
-  overflow: hidden;
-  height: 100%;
-}
-
-body.km-home {
-  min-height: 100%;
-}
-
-.km-home-main {
-  min-height: 100%;
-}
-
-html.km-home .km-hero {
-  min-height: 100vh;
-  min-height: 100dvh;
-  padding-bottom: 2rem;
-}
-
-/* Magnetic name letters */
-.km-magnetic {
-  display: inline;
-  position: relative;
-  white-space: pre-wrap;
-}
-
-.km-letter {
-  display: inline-block;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-}
-
-.km-letter-space {
-  width: 0.28em;
-}
-
-.km-magnetic-sr {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .km-letter {
-    transform: none !important;
-  }
-}
-
 html.km-has-cursor,
 html.km-has-cursor * {
   cursor: none;
@@ -1240,11 +1184,6 @@ html[data-theme="dark"] .km-exp-item ul li::before {
     min-height: auto;
     padding-top: 3.2rem;
     padding-bottom: 3.4rem;
-  }
-
-  html.km-home .km-hero {
-    min-height: 100vh;
-    min-height: 100dvh;
   }
 
   .km-row {
