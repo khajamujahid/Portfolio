@@ -1,72 +1,123 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { contacts } from '@/lib/data';
-import TechMarquee from '@/components/TechMarquee';
+import { motion, useReducedMotion } from "framer-motion";
+import { contacts } from "@/lib/data";
 
-export default function Hero() {
+const LINKS = [
+  { href: "#work", label: "See my projects" },
+  { href: "#about", label: "More about me" },
+  { href: contacts.resume, label: "Résumé", external: true }
+];
+
+export default function Hero({ ready }) {
+  const reduce = useReducedMotion();
+  const show = ready || reduce;
+
+  const rise = {
+    hidden: { opacity: 0, y: reduce ? 0 : 28 },
+    show: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: reduce ? 0 : 0.08 * i, duration: 0.55, ease: [0.22, 1, 0.36, 1] }
+    })
+  };
+
   return (
-    <section id="home" className="section hero" aria-labelledby="hero-title">
-      <div className="hero-lars">
-        <motion.div
-          className="hero-copy"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+    <section className="km-hero" id="top" aria-labelledby="km-name">
+      <div className="km-hero-drift" aria-hidden="true">
+        <span className="km-blob km-blob-a" />
+        <span className="km-blob km-blob-b" />
+        <span className="km-blob km-blob-c" />
+        <span className="km-float-token km-float-l">{"{"}</span>
+        <span className="km-float-token km-float-r">{"}"}</span>
+      </div>
+
+      <div className="km-hero-copy">
+        <motion.p
+          className="km-stroke-line"
+          custom={0}
+          variants={rise}
+          initial="hidden"
+          animate={show ? "show" : "hidden"}
         >
-          <p className="eyebrow">Senior Software Engineer</p>
-          <h1 id="hero-title">
-            <span className="hi">Hey there — I&apos;m</span>
-            <span className="name">Khaja Mujahiddin Mohammed</span>
-          </h1>
-          <p className="headline">
-            I craft resilient backends, event-driven platforms, and grounded AI systems —
-            with the polish of a product thinker and the rigor of someone who&apos;s been on-call.
-          </p>
-          <div className="domain-badges" role="list">
-            <span className="badge" role="listitem">FastAPI · Spring Boot</span>
-            <span className="badge" role="listitem">Kafka · microservices</span>
-            <span className="badge" role="listitem">RAG with guardrails</span>
-            <span className="badge" role="listitem">AWS · Kubernetes</span>
-          </div>
-          <div className="hero-cta">
-            <a href="#projects" className="btn primary">See projects</a>
-            <a href="#labs" className="btn">Play with labs</a>
-            <a href={contacts.resume} className="btn" download>Résumé</a>
-          </div>
-          <div className="metrics">
-            <div className="metric"><strong>5+ yrs</strong><span>shipping prod</span></div>
-            <div className="metric"><strong>35%</strong><span>throughput lift</span></div>
-            <div className="metric"><strong>&lt;100ms</strong><span>peak API latency</span></div>
-            <div className="metric"><strong>99.9%</strong><span>BF uptime</span></div>
-          </div>
-        </motion.div>
+          Hey, I&apos;m
+        </motion.p>
+
+        <motion.h1
+          id="km-name"
+          className="km-name"
+          custom={1}
+          variants={rise}
+          initial="hidden"
+          animate={show ? "show" : "hidden"}
+        >
+          <span>Khaja Mujahiddin</span>
+          <span>Mohammed</span>
+        </motion.h1>
+
+        <motion.p
+          className="km-nick-lead"
+          custom={2}
+          variants={rise}
+          initial="hidden"
+          animate={show ? "show" : "hidden"}
+        >
+          But you can call me
+        </motion.p>
 
         <motion.div
-          className="hero-side"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.08 }}
+          className="km-nick"
+          custom={3}
+          variants={rise}
+          initial="hidden"
+          animate={show ? "show" : "hidden"}
         >
-          <div className="window-frame" aria-hidden="false">
-            <div className="window-chrome"><i /><i /><i /></div>
-            <div className="window-body">
-              <Image
-                src="/profile.jpg"
-                width={160}
-                height={160}
-                alt="Khaja Mujahiddin Mohammed"
-                className="hero-avatar"
-                priority
-              />
-              <p className="window-title">khaja.exe</p>
-              <p className="window-sub">Backend &amp; Data Platforms · New Haven, CT</p>
-            </div>
-          </div>
+          <span className="km-nick-brace" aria-hidden="true">
+            {"<"}
+          </span>
+          <code className="km-nick-chip">
+            khaja.exe
+            <span className="km-cursor-blink" aria-hidden="true">
+              ▍
+            </span>
+          </code>
+          <span className="km-nick-brace" aria-hidden="true">
+            {"/>"}
+          </span>
         </motion.div>
+
+        <motion.p
+          className="km-roles"
+          custom={4}
+          variants={rise}
+          initial="hidden"
+          animate={show ? "show" : "hidden"}
+        >
+          Senior Software Engineer <span aria-hidden="true">·</span> Backend &amp; Data
+          Platforms
+        </motion.p>
+
+        <motion.ul
+          className="km-hero-links"
+          custom={5}
+          variants={rise}
+          initial="hidden"
+          animate={show ? "show" : "hidden"}
+        >
+          {LINKS.map((item) => (
+            <li key={item.label}>
+              <a
+                href={item.href}
+                {...(item.external
+                  ? { target: "_blank", rel: "noreferrer" }
+                  : {})}
+              >
+                <span aria-hidden="true">→</span> {item.label}
+              </a>
+            </li>
+          ))}
+        </motion.ul>
       </div>
-      <TechMarquee />
     </section>
   );
 }
