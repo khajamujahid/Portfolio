@@ -1,33 +1,53 @@
-'use client';
-import { contacts } from '@/lib/data';
+"use client";
 
-export default function Contact(){
-  const openEmail = (e)=>{
-    e.preventDefault();
-    const name = encodeURIComponent(e.target.name.value.trim());
-    const body = encodeURIComponent(e.target.message.value.trim());
-    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
-    window.location.href = `mailto:${contacts.email}?subject=${subject}&body=${body}`;
-  };
+import { contacts } from "@/lib/data";
+
+export default function Contact() {
   return (
-    <section id="contact" className="section contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <div className="contact-grid">
-        <div className="contact-card">
-          <p><strong>Email:</strong> <a href={`mailto:${contacts.email}`}>{contacts.email}</a></p>
-          <p><strong>Phone:</strong> <a href="tel:+13477365812">+1 (347) 736-5812</a></p>
-          <p><strong>LinkedIn:</strong> <a href={contacts.linkedin} target="_blank" rel="noopener">{contacts.linkedin.replace('https://www.linkedin.com/','/')}</a></p>
-          <p><strong>GitHub:</strong> <a href={contacts.github} target="_blank" rel="noopener">{contacts.github.replace('https://','/')}</a></p>
-        </div>
-        <form className="contact-card" onSubmit={openEmail} aria-label="Contact form">
-          <label htmlFor="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required />
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" placeholder="Your message" rows={4} required></textarea>
-          <button type="submit" className="btn primary">Send via Email</button>
-          <p className="muted">The form opens your mail client with a prefilled email.</p>
-        </form>
-      </div>
+    <section className="km-contact" id="contact" aria-labelledby="km-contact-title">
+      <p className="km-kicker">Contact</p>
+      <h2 id="km-contact-title" className="km-display">
+        Let&apos;s compile something
+      </h2>
+      <p className="km-lede">
+        New Haven, CT. Open to backend, data-platform, and applied-ML conversations.
+      </p>
+
+      <a className="km-mail" href={`mailto:${contacts.email}`}>
+        {contacts.email}
+      </a>
+
+      <ul className="km-contact-grid">
+        <li>
+          <a href={contacts.linkedin} target="_blank" rel="noreferrer">
+            <span className="km-kicker">LinkedIn</span>
+            <span>khaja-muj</span>
+          </a>
+        </li>
+        <li>
+          <a href={contacts.github} target="_blank" rel="noreferrer">
+            <span className="km-kicker">GitHub</span>
+            <span>khajamujahid</span>
+          </a>
+        </li>
+        <li>
+          <a href={`tel:${contacts.phone}`}>
+            <span className="km-kicker">Phone</span>
+            <span>{contacts.phoneDisplay}</span>
+          </a>
+        </li>
+        <li>
+          <a href={contacts.resume} target="_blank" rel="noreferrer">
+            <span className="km-kicker">Résumé</span>
+            <span>Download PDF</span>
+          </a>
+        </li>
+      </ul>
+
+      <footer className="km-foot">
+        <p className="km-mono">{"{km}"} · khaja.exe</p>
+        <p>© {new Date().getFullYear()} Khaja Mujahiddin Mohammed</p>
+      </footer>
     </section>
   );
 }
