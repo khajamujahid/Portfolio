@@ -7,6 +7,27 @@ function readTheme() {
   return document.documentElement.getAttribute("data-theme") || "light";
 }
 
+function MoonIcon() {
+  return (
+    <svg
+      className="km-theme-moon"
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      aria-hidden="true"
+    >
+      <path
+        d="M18.5 14.2A7.2 7.2 0 0 1 9.8 5.5 7.4 7.4 0 1 0 18.5 14.2Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function ThemeToggle() {
   const [theme, setTheme] = useState("light");
 
@@ -35,7 +56,7 @@ export default function ThemeToggle() {
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       aria-pressed={isDark}
     >
-      <span className="km-theme-orb" data-mode={theme} />
+      <MoonIcon />
       <span className="km-sr">{isDark ? "Dark" : "Light"}</span>
     </button>
   );
