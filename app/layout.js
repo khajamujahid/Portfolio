@@ -1,5 +1,4 @@
 import { Syne, DM_Sans, IBM_Plex_Mono } from "next/font/google";
-import Cursor from "@/components/Cursor";
 import "./globals.css";
 
 const display = Syne({
@@ -57,7 +56,6 @@ export default function RootLayout({ children }) {
         <a className="km-skip" href="#main">
           Skip to content
         </a>
-        <Cursor />
         {children}
       </body>
     </html>
