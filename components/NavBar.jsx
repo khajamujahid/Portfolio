@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import ThemeToggle from "@/components/ThemeToggle";
 import { contacts } from "@/lib/data";
 
 const LINKS = [
-  { href: "#top", label: "Home" },
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" }
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" }
 ];
 
 function KmMark() {
@@ -21,7 +22,6 @@ function KmMark() {
       height="44"
       aria-hidden="true"
     >
-      {/* Organic squiggle KM — continuous line logo */}
       <path
         className="km-mark-path"
         d="M10 34
@@ -77,7 +77,7 @@ function MenuDots({ open }) {
   );
 }
 
-export default function NavBar({ revealed }) {
+export default function NavBar({ revealed = true }) {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
 
@@ -105,14 +105,14 @@ export default function NavBar({ revealed }) {
       }}
       transition={{ duration: reduce ? 0.01 : 0.45, delay: revealed && !reduce ? 0.05 : 0 }}
     >
-      <a className="km-mono-mark" href="#top" aria-label="Khaja Mujahiddin Mohammed — home">
+      <Link className="km-mono-mark" href="/" aria-label="Khaja Mujahiddin Mohammed — home">
         <KmMark />
         <span className="km-mark-label">
-          <span className="km-mark-nick">khaja.exe</span>
+          <span className="km-mark-nick">kevin</span>
           <span className="km-mark-sep">/</span>
           <span className="km-mark-full">khaja mujahiddin</span>
         </span>
-      </a>
+      </Link>
 
       <div className="km-nav-end">
         <a
@@ -151,7 +151,7 @@ export default function NavBar({ revealed }) {
           >
             <nav className="km-drawer-list">
               {LINKS.map((item, i) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
@@ -161,7 +161,7 @@ export default function NavBar({ revealed }) {
                     0{i + 1}
                   </span>
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
             <div className="km-drawer-socials">
