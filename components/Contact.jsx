@@ -45,7 +45,7 @@ export default function Contact() {
       </ul>
 
       <footer className="km-foot">
-        <p className="km-mono">{"{km}"} · kevin</p>
+        <p className="km-mono">{"{km}"} · khaja.exe</p>
         <p>© {new Date().getFullYear()} Khaja Mujahiddin Mohammed</p>
       </footer>
     </section>
