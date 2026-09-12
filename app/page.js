@@ -1,40 +1,37 @@
-'use client';
-import NavBar from '@/components/NavBar';
-import Hero from '@/components/Hero';
-import LiveLabs from '@/components/LiveLabs';
-import About from '@/components/About';
-import Projects from '@/components/Projects';
-import Experience from '@/components/Experience';
-import Skills from '@/components/Skills';
-import Education from '@/components/Education';
-import Certifications from '@/components/Certifications';
-import Contact from '@/components/Contact';
-import Chatbot from '@/components/Chatbot';
+"use client";
 
-export default function Page() {
+import { useEffect, useState } from "react";
+import Splash from "@/components/Splash";
+import NavBar from "@/components/NavBar";
+import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
+import LiveLabs from "@/components/LiveLabs";
+import Experience from "@/components/Experience";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Cursor from "@/components/Cursor";
+
+export default function HomePage() {
+  const [booted, setBooted] = useState(false);
+
+  useEffect(() => {
+    const failsafe = window.setTimeout(() => setBooted(true), 3200);
+    return () => window.clearTimeout(failsafe);
+  }, []);
+
   return (
     <>
-      <div className="parallax-bg" aria-hidden="true" />
-      <div className="dot-bg" aria-hidden="true" />
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="shapes-bg" src="/shapes-bg.svg" alt="" />
-      <NavBar />
-      <main>
-        <Hero />
+      <Splash onDone={() => setBooted(true)} />
+      <Cursor />
+      <NavBar revealed={booted} />
+      <main id="main">
+        <Hero ready={booted} />
         <Projects />
         <LiveLabs />
-        <About />
         <Experience />
-        <Skills />
-        <Education />
-        <Certifications />
+        <About />
         <Contact />
       </main>
-      <footer className="site-footer">
-        <div className="footer-fun">Always curious. Always shipping.</div>
-        © {new Date().getFullYear()} Khaja Mujahiddin Mohammed
-      </footer>
-      <Chatbot />
     </>
   );
 }
