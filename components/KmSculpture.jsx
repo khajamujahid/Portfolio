@@ -7,7 +7,7 @@ import Image from "next/image";
  * Glossy inflated KM monogram for the hero.
  * Prefers /public/km-monogram.png when present; ships original SVG tubes otherwise.
  */
-export default function KmSculpture({ className = "" }) {
+export default function KmSculpture({ dancing = false } = { className = "" }) {
   const [pngReady, setPngReady] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function KmSculpture({ className = "" }) {
           alt=""
           width={720}
           height={720}
-          className="km-sculpture-img"
+          className={`km-sculpture-img${dancing ? " is-dancing" : ""}`}
           priority
         />
       </div>
