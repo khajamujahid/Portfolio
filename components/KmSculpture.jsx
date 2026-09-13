@@ -1,47 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-
 /**
  * Glossy inflated KM monogram for the hero.
- * Prefers /public/km-monogram.png when present; ships original SVG tubes otherwise.
+ * Original SVG tubes — K and M groups animate when `dancing` is true.
  */
-export default function KmSculpture({ dancing = false } = { className = "" }) {
-  const [pngReady, setPngReady] = useState(false);
-
-  useEffect(() => {
-    let cancelled = false;
-    const probe = new window.Image();
-    probe.onload = () => {
-      if (!cancelled) setPngReady(true);
-    };
-    probe.onerror = () => {
-      if (!cancelled) setPngReady(false);
-    };
-    probe.src = `/km-monogram.png?t=${Date.now()}`;
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  if (pngReady) {
-    return (
-      <div className={`km-sculpture ${className}`} aria-hidden="true">
-        <Image
-          src="/km-monogram.png"
-          alt=""
-          width={720}
-          height={720}
-          className={`km-sculpture-img${dancing ? " is-dancing" : ""}`}
-          priority
-        />
-      </div>
-    );
-  }
-
+export default function KmSculpture({ dancing = false }) {
   return (
-    <div className={`km-sculpture ${className}`} aria-hidden="true">
+    <div
+      className={`km-sculpture${dancing ? " is-dancing" : ""}`}
+      aria-hidden="true"
+    >
       <svg
         className="km-sculpture-svg"
         viewBox="0 0 420 420"
@@ -73,8 +41,7 @@ export default function KmSculpture({ dancing = false } = { className = "" }) {
 
         <ellipse cx="210" cy="368" rx="150" ry="22" fill="#606887" opacity="0.12" />
 
-        <g filter="url(#kmSoftShadow)">
-          {/* K vertical stem */}
+        <g className="km-sculpt-k" filter="url(#kmSoftShadow)" style={{ transformOrigin: "110px 210px" }}>
           <path
             d="M78 70
                C58 70 48 88 52 112
@@ -85,7 +52,6 @@ export default function KmSculpture({ dancing = false } = { className = "" }) {
                C128 86 102 70 78 70 Z"
             fill="url(#kmGradK)"
           />
-          {/* K upper arm */}
           <path
             d="M118 150
                C128 128 148 118 172 122
@@ -96,7 +62,6 @@ export default function KmSculpture({ dancing = false } = { className = "" }) {
                C128 198 112 176 118 150 Z"
             fill="url(#kmGradK)"
           />
-          {/* K lower arm */}
           <path
             d="M128 210
                C148 198 172 204 190 220
@@ -112,10 +77,10 @@ export default function KmSculpture({ dancing = false } = { className = "" }) {
             fill="url(#kmShine)"
             opacity="0.55"
           />
+          <circle cx="96" cy="108" r="10" fill="#fff" opacity="0.55" />
         </g>
 
-        <g filter="url(#kmSoftShadow)">
-          {/* M left stem */}
+        <g className="km-sculpt-m" filter="url(#kmSoftShadow)" style={{ transformOrigin: "300px 210px" }}>
           <path
             d="M198 86
                C178 80 162 96 166 120
@@ -126,7 +91,6 @@ export default function KmSculpture({ dancing = false } = { className = "" }) {
                C238 96 220 90 198 86 Z"
             fill="url(#kmGradM)"
           />
-          {/* M middle valley */}
           <path
             d="M214 108
                C230 100 248 108 258 128
@@ -143,7 +107,6 @@ export default function KmSculpture({ dancing = false } = { className = "" }) {
                L214 108 Z"
             fill="url(#kmGradK)"
           />
-          {/* M right stem */}
           <path
             d="M348 86
                C328 78 312 94 316 118
@@ -159,11 +122,9 @@ export default function KmSculpture({ dancing = false } = { className = "" }) {
             fill="url(#kmShine)"
             opacity="0.5"
           />
+          <circle cx="230" cy="128" r="8" fill="#fff" opacity="0.45" />
+          <circle cx="370" cy="112" r="9" fill="#fff" opacity="0.5" />
         </g>
-
-        <circle cx="96" cy="108" r="10" fill="#fff" opacity="0.55" />
-        <circle cx="230" cy="128" r="8" fill="#fff" opacity="0.45" />
-        <circle cx="370" cy="112" r="9" fill="#fff" opacity="0.5" />
       </svg>
     </div>
   );
