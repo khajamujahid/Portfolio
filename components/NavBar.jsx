@@ -108,7 +108,7 @@ export default function NavBar({ revealed }) {
       <a className="km-mono-mark" href="#top" aria-label="Khaja Mujahiddin Mohammed — home">
         <KmMark />
         <span className="km-mark-label">
-          <span className="km-mark-nick">khaja.exe</span>
+          <span className="km-mark-nick">kevin</span>
           <span className="km-mark-sep">/</span>
           <span className="km-mark-full">khaja mujahiddin</span>
         </span>
