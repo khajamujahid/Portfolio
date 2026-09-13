@@ -60,7 +60,7 @@ export default function Splash({ onDone }) {
             <CompileMark />
           </motion.div>
           <p className="km-splash-line">
-            <span className="km-mono">Booting khaja.exe</span>
+            <span className="km-mono">Booting Kevin</span>
             <span className="km-cursor-blink" aria-hidden="true">
               ▍
             </span>
